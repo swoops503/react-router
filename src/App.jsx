@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Routes, Route, Link } from "react-router-dom";
-import { DerRed } from './components/Red';
-import { DerBlue } from './components/Blue';
+import { Red } from './components/Red';
+import { Blue } from './components/Blue';
+import { Home } from './components/Home';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,12 +12,14 @@ function App() {
     <>
       <div id="container">
       <Routes>
-     <Route path="/blue" element={<DerBlue />} />
-     <Route path="/red" element={<DerRed />} />
+     <Route path="/blue" element={<Blue />} />
+     <Route path="/red" element={<Red />} />
+     <Route path="/" element={<Home />} />
    </Routes>
       <div id="navbar">
-      <Link to="/blue">der blue</Link>
-      <Link to="/red">der red</Link>
+      <Link to="/">home</Link>
+      <Link to="/blue">blue</Link>
+      <Link to="/red">red</Link>
       </div>
       <div id="main-section">{/* routes here */}</div>
     </div>
